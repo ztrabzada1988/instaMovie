@@ -20,5 +20,15 @@ class App extends React.Component {
     // called when the component is removed.
   }
 
+  render() {
+    return (
+      <div>
+        <form class="form-inline">
+          <input type="text" class="form-control" placeholder="Type a movie to search..." />
+          <input type="submit" class
+        </form>
+      </div>
+    )
+  }
 
 }
