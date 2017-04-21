@@ -22,10 +22,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <form class="form-inline">
-          <input type="text" class="form-control" placeholder="Type a movie to search..." />
-          <input type="submit" class
+      <div className="container">
+        <form className="form-inline">
+          <input type="text" className="form-control" placeholder="Type a movie to search..." />
+          <input type="submit" className="form-control" value="Search" />
         </form>
       </div>
     )
