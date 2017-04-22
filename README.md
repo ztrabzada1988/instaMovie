@@ -1,0 +1,1 @@
+this is a movie search app that uses The Movie Database API to search movies and provide description and etc
