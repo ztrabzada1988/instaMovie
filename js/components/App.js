@@ -13,13 +13,6 @@ class App extends React.Component {
     this.search();
   }
 
-  componentDidMount() {
-    // called after the component has been rendered into the page
-  }
-
-  componentWillUnmount() {
-    // called when the component is removed.
-  }
 
   updateSearch() {
     this.search(this.refs.query.value)
