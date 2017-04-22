@@ -32,11 +32,12 @@ class App extends React.Component {
   render() {
     // iterate over movies api and return poster of each movie
     var movies = _.map(this.state.movies, (movie) => {
+      const imageUrl = `http://image.tmdb.org/t/p/w500/${movie.poster_path}`;
       // put a key as the id of api result to avoid react child warning
-      return <li key={movie.id}>{movie.poster_path}</li>
+      return <li key={movie.id}>{movie.title}<img src={imageUrl}/></li>
     });
 
-    // just to see my api response
+    //just to see my api response
     console.log(this.state.movies);
 
     return (
@@ -52,5 +53,5 @@ class App extends React.Component {
   }
 
 }
-
+ 
 export default App
