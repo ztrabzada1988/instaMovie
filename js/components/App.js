@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   updateSearch() {
-    this.search(this.refs.query.value);
+    this.search(this.refs.query.value)
   }
 
   // search method will take as a default for query "star"
@@ -40,7 +40,7 @@ class App extends React.Component {
     // iterate over movies api and return poster of each movie
     var movies = _.map(this.state.movies, (movie) => {
       // put a key as the id of api result to avoid react child warning
-      return <li key={movie.id}>{movie.title}</li>
+      return <li key={movie.id}>{movie.poster_path}</li>
     });
 
     // just to see my api response
