@@ -34,7 +34,7 @@ class App extends React.Component {
     var movies = _.map(this.state.movies, (movie) => {
       const imageUrl = `http://image.tmdb.org/t/p/w500/${movie.poster_path}`;
       // put a key as the id of api result to avoid react child warning
-      return <li key={movie.id}>{movie.title}<img src={imageUrl}/></li>
+      return <li key={movie.id} className="list-items">{movie.title}<img src={imageUrl}/></li>
     });
 
     //just to see my api response
