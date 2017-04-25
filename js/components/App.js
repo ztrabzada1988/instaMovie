@@ -38,7 +38,7 @@ class App extends React.Component {
     });
 
     //just to see my api response
-    console.log(this.state.movies);
+    // console.log(this.state.movies);
 
     return (
       <div className="container">
