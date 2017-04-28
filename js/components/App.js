@@ -31,8 +31,6 @@ class App extends React.Component {
         overview: data.overview,
         homepage: data.homepage,
         poster: data.poster_path,
-        production: data.production_companies,
-        production_countries: data.production_countries,
         genre: data.genres,
         release: data.release_date,
         vote: data.vote_average,
