@@ -17,5 +17,20 @@ export default class GameCard extends React.Component {
    return text;
   }
 
+  render() {
+    //props here is a single game object
+    const youtubeLink = `https://www.youtube.com/embed/${this.props.videoId}`;
+    const {title, img, id, summary} = this.props;
+    return (
+        <div className="movieCard">
+          <strong>{this.truncateText(title)}</strong><br />
+        <Link to={`/home/movies/${id}`}>
+          <img
+              onClick={() => browserHistory.push(`/movies/${id}`)}
+              src={img}
+              alt="error, no img found" /><br /><br />
+        </Link>
+        </div>
+    );
   };
 }
