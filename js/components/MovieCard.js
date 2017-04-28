@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 
 import { showDetail } from '../actions';
 
-export default class GameCard extends React.Component {
+class GameCard extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -38,3 +38,5 @@ export default class GameCard extends React.Component {
     );
   };
 }
+
+export default GameCard
