@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import { showDetail, searchGame } from '../actions';
-import Rating from './Rating';
+let numeral = require('numeral');
 
 class MovieDetails extends React.Component {
 
@@ -23,6 +23,20 @@ class MovieDetails extends React.Component {
             totalRevenue = data.revenue,
             noData = '-',
             backdropIMG = `https://image.tmdb.org/t/p/original${data.backdrop}`
+
+            // if not data is found :
+            if (data.vote === 'undefined' || data.vote === 0) {
+                data.vote = noData
+            } else {
+                data.vote = data.vote + '/10'
+            };
+
+            // if revenue is not found :
+            if (totalRevenue === 'undefined' || totalRevenue === 0) {
+                totalRevenue = noData
+            } else {
+                totalRevenue = num
+            }
 
     }
 }
