@@ -48,11 +48,25 @@ class MovieDetails extends React.Component {
 
                         <div className="additional-details">
                             <span className="genre-list">{genres}</span>
+                            <span className="production-list">{productionList}</span>
+                            <div className="row nopadding release-details">
+                                <div className="col-xs-6"> Original Release: <span className="meta-data">{data.release}</span></div>
+                                <div className="col-xs-6"> Running Time: <span className="meta-data">{data.runtime}</span></div>
+                                <div className="col-xs-6"> Box Office: <span className="meta-data">{data.totalRevenue}</span></div>
+                                <div className="col-xs-6"> Vote Average: <span className="meta-data">{data.vote}</span></div>
                         </div>    
                     </div>
-                </div>    
-            )
+                </div>
 
+                <div className="poster-container nopadding col-xs-12 col-md-4 pull-md-8 col-lg-5 pull-lg-7">  
+                    <img id="postertest" className="poster" src={posterIMG}/>
+                </div>
+            </div>    
+        )
+    }
+    
+    componentDidUpdate() {
+        document.body.style.backgroundImage = `url${backdropIMG}`;
     }
 }
 
