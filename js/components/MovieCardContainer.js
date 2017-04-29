@@ -9,7 +9,7 @@ class MovieCardContainer extends React.Component {
     render() {
         // container will include all the props from MovieCard
         return (
-            <MovieCard img={this.props.img} id={this.props.id} title={this.props.title} videoId={this.props.videoId} summary={this.props.summary} />
+            <MovieCard img={this.props.img} id={this.props.id} title={this.props.title} videoId={this.props.videoId} overview={this.props.overview} />
         );
     }
 }

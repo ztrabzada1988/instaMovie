@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieCardContainer from './MovieCardContainer';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 class MovieCardList extends React.Component {
     
@@ -12,7 +12,7 @@ class MovieCardList extends React.Component {
 
             return (
                 <li key={index}>
-                    <MovieCardContainer img={imageUrl} id={movie.id} title={movie.title} summary={movie.summary} />
+                    <MovieCardContainer img={imageUrl} id={movie.id} title={movie.title} overview={movie.overview} />
                 </li>    
             );
         });
