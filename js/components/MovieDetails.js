@@ -35,7 +35,7 @@ class MovieDetails extends React.Component {
             if (totalRevenue === 'undefined' || totalRevenue === 0) {
                 totalRevenue = noData
             } else {
-                totalRevenue = num
+                totalRevenue = numeral(data.revenue).format('($0,0)');
             }
 
     }

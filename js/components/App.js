@@ -25,18 +25,6 @@ class App extends React.Component {
       this.setState({
         movies: response.body.results,
         total: response.total_results,
-        movieID: data.id,
-        original_title: data.original_title,
-        tagline: data.tagline,
-        overview: data.overview,
-        homepage: data.homepage,
-        poster: data.poster_path,
-        genre: data.genres,
-        release: data.release_date,
-        vote: data.vote_average,
-        runtime: data.runtime,
-        revenue: data.revenue,
-        backdrop: data.backdrop_path
       })
     })
   }
@@ -50,7 +38,7 @@ class App extends React.Component {
     });
 
     //just to see my api response
-    // console.log(this.state.movies);
+    console.log(this.state.movies);
 
     return (
       <div className="container">
