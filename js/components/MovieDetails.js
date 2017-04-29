@@ -36,7 +36,22 @@ class MovieDetails extends React.Component {
                 totalRevenue = noData
             } else {
                 totalRevenue = numeral(data.revenue).format('($0,0)');
-            }
+            };
+
+            return (
+                <div className="col-xs-12 cardcont nopadding">
+
+                    <div className="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-7 push-lg-5"> 
+                        <h1>{data.original_title}</h1>
+                        <span className="tagline">{data.tagline}</span>
+                        <p>{data.overview}</p>
+
+                        <div className="additional-details">
+                            <span className="genre-list">{genres}</span>
+                        </div>    
+                    </div>
+                </div>    
+            )
 
     }
 }
