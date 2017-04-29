@@ -24,7 +24,7 @@ class MovieDetails extends React.Component {
             noData = '-',
             backdropIMG = `https://image.tmdb.org/t/p/original${data.backdrop}`
 
-            // if not data is found :
+            // if no data is found :
             if (data.vote === 'undefined' || data.vote === 0) {
                 data.vote = noData
             } else {
