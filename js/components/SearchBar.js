@@ -28,5 +28,7 @@ class SearchBar extends React.Component {
         this.props.searchGame(this.state.query)
     }
 
+    onChange
+
 
 }
