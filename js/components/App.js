@@ -18,24 +18,24 @@ class App extends React.Component {
     this.search(this.refs.query.value)
   }
 
-  // search method will take as a default for query "star"
-  // search(query = "star") {
-  //   var url = `https://api.themoviedb.org/3/search/movie?api_key=508b14c0d7be622882e5f6d6221dd78f&language=en-US&query=${query}&page=10&include_adult=false`;
-  //   Request.get(url).then((response) => {
-  //     this.setState({
-  //       movies: response.body.results,
-  //       total: response.total_results,
-  //     })
-  //   })
-  // }
+  search method will take as a default for query "star"
+  search(query = "star") {
+    var url = `https://api.themoviedb.org/3/search/movie?api_key=508b14c0d7be622882e5f6d6221dd78f&language=en-US&query=${query}&page=10&include_adult=false`;
+    Request.get(url).then((response) => {
+      this.setState({
+        movies: response.body.results,
+        total: response.total_results,
+      })
+    })
+  }
 
-  // render() {
-  //   // iterate over movies api and return poster of each movie
-  //   var movies = _.map(this.state.movies, (movie) => {
-  //     const imageUrl = `http://image.tmdb.org/t/p/w500/${movie.poster_path}`;
-  //     // put a key as the id of api result to avoid react child warning
-  //     return <li key={movie.id} className="list-items">{movie.title}<img src={imageUrl}/></li>
-  //   });
+  render() {
+    // iterate over movies api and return poster of each movie
+    var movies = _.map(this.state.movies, (movie) => {
+      const imageUrl = `http://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+      // put a key as the id of api result to avoid react child warning
+      return <li key={movie.id} className="list-items">{movie.title}<img src={imageUrl}/></li>
+    });
 
     //just to see my api response
     console.log(this.state.movies);
@@ -53,5 +53,5 @@ class App extends React.Component {
   }
 
 }
- 
+
 export default App
