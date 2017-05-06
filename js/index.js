@@ -1,8 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+require('babel-polyfill');
 
-ReactDOM.render(
-      <App />,
-    document.getElementById('root')
-)
+import React from 'react';
+import ReactDOM  from 'react-dom';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import {Provider} from 'react-redux';
+import store from './store';
+
+import App from './components/App';
+import MovieCardList from './components/MovieCardList';
+import MovieDetails from './components/MovieDetails';
