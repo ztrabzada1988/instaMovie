@@ -17,12 +17,12 @@ class MovieDetails extends React.Component {
 
         let data = this.props.data
         // if movie ID is found :
-        let posterIMG =  `https://image.tmdb.org/t/p/w500${data.poster}`,
-            production = data.production,
-            genres = data.genre,
-            totalRevenue = data.revenue,
-            noData = '-',
-            backdropIMG = `https://image.tmdb.org/t/p/original${data.backdrop}`
+        // let posterIMG =  `https://image.tmdb.org/t/p/w500${data.poster}`,
+        //     production = data.production,
+        //     genres = data.genre,
+        //     totalRevenue = data.revenue,
+        //     noData = '-',
+        //     backdropIMG = `https://image.tmdb.org/t/p/original${data.backdrop}`
 
             // if no data is found :
             if (data.vote === 'undefined' || data.vote === 0) {

@@ -13,12 +13,11 @@ class App extends React.Component {
     this.search();
   }
 
-
   updateSearch() {
     this.search(this.refs.query.value)
   }
 
-  search method will take as a default for query "star"
+  // search method will take as a default for query "star"
   search(query = "star") {
     var url = `https://api.themoviedb.org/3/search/movie?api_key=508b14c0d7be622882e5f6d6221dd78f&language=en-US&query=${query}&page=10&include_adult=false`;
     Request.get(url).then((response) => {
