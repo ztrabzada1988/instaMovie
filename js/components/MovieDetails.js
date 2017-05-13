@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import { showDetail, searchGame } from '../actions';
-let numeral = require('numeral');
+import Rating from './Rating';
 
 class MovieDetails extends React.Component {
 

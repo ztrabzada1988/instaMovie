@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import { searchGame } from '../actions';
+import { searchMovie } from '../actions';
 import { browserHistory } from 'react-router';
 
 class SearchBar extends React.Component {

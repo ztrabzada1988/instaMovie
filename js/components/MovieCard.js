@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router';
 
 import { showDetail } from '../actions';
 
-class GameCard extends React.Component {
+class MovieCard extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -19,7 +19,7 @@ class GameCard extends React.Component {
   }
 
   render() {
-    //props here is a single game object
+    //props here is a single movie object
     const youtubeLink = `https://www.youtube.com/embed/${this.props.videoId}`;
     
     // pass the following props to movieCardList 
@@ -32,11 +32,11 @@ class GameCard extends React.Component {
           <img
               onClick={() => browserHistory.push(`/movies/${id}`)}
               src={img}
-              alt="Error; could not find Image" /><br /><br />
+              alt="Error: could not find Image" /><br /><br />
         </Link>
         </div>
     );
   };
 }
 
-export default GameCard
+export default MovieCard

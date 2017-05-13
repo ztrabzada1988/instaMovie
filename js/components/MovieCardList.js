@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieCardContainer from './MovieCardContainer';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 class MovieCardList extends React.Component {
     
@@ -8,11 +8,11 @@ class MovieCardList extends React.Component {
 
         const movies = this.props.movies.map((movie, index) => {
             const imageUrl = movie.poster_path ? `http://image.tmdb.org/t/p/w500/${movie.poster_path}` : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png';
-            // const video = movie.video ? movie.video[0].video_id : 'dQw4w9WgXcQ';
+            const video = movie.video ? movie.video[0].video_id : 'dQw4w9WgXcQ';
 
             return (
                 <li key={index}>
-                    <MovieCardContainer img={imageUrl} id={movie.id} title={movie.title} overview={movie.overview} />
+                    <MovieCardContainer img={imageUrl} id={movie.id} title={movie.title} overview={movie.overview} videoId={video} />
                 </li>    
             );
         });
@@ -28,3 +28,5 @@ class MovieCardList extends React.Component {
 const mapStateToProps = state => ({
     movies: state.movies
 })
+
+export default connect(mapStateToProps)(MovieCardList);
