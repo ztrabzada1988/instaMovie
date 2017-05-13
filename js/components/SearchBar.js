@@ -11,6 +11,7 @@ class SearchBar extends React.Component {
         query: ''
     }
 
+    // while data is being fetched from API request run the loading... function
     Loading = () => { return <h5>Context Loading...</h5> }
     NotLoading = () => { return; }
     isLoading = () => {
@@ -22,12 +23,14 @@ class SearchBar extends React.Component {
         }
     }
 
+    // onsearchapi first preventdefault, go to /games page, and run the searchMovie function imported from actions with value entered by user (query.value)
     onSearchAPI = async (event) => {
         event.preventDefault();
         browserHistory.push('/games')
-        this.props.searchGame(this.state.query)
+        this.props.searchMovie(this.state.query)
     }
 
+    // set the value of user input as the query value
     onChangeTerm = e => this.setState({ query: e.target.value })
 
     render() {
@@ -43,6 +46,7 @@ class SearchBar extends React.Component {
     }
 }
 
+// link the component to certain parts of the store
 const mapStateToProps = state => ({
     loading: state.loading
 });

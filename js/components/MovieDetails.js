@@ -1,73 +1,49 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
-import { showDetail, searchGame } from '../actions';
+import { showDetail, searchMovie } from '../actions';
 import Rating from './Rating';
 
 class MovieDetails extends React.Component {
 
-    componentDidMount() {
-        this.props.showDetail(this.props.params.movieID);
-    }
-
-    render() {
-        if(!this.props.movie) {
-            return <h1>Loading...</h1>
-        }
-
-        let data = this.props.data
-        // if movie ID is found :
-        // let posterIMG =  `https://image.tmdb.org/t/p/w500${data.poster}`,
-        //     production = data.production,
-        //     genres = data.genre,
-        //     totalRevenue = data.revenue,
-        //     noData = '-',
-        //     backdropIMG = `https://image.tmdb.org/t/p/original${data.backdrop}`
-
-            // if no data is found :
-            if (data.vote === 'undefined' || data.vote === 0) {
-                datsa.vote = noData
-            } else {
-                data.vote = data.vote + '/10'
-            };
-
-            // if revenue is not found :
-            if (totalRevenue === 'undefined' || totalRevenue === 0) {
-                totalRevenue = noData
-            } else {
-                totalRevenue = numeral(data.revenue).format('($0,0)');
-            };
-
-            return (
-                <div className="col-xs-12 cardcont nopadding">
-
-                    <div className="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-7 push-lg-5"> 
-                        <h1>{data.original_title}</h1>
-                        <span className="tagline">{data.tagline}</span>
-                        <p>{data.overview}</p>
-
-                        <div className="additional-details">
-                            <span className="genre-list">{genres}</span>
-                            <span className="production-list">{productionList}</span>
-                            <div className="row nopadding release-details">
-                                <div className="col-xs-6"> Original Release: <span className="meta-data">{data.release}</span></div>
-                                <div className="col-xs-6"> Running Time: <span className="meta-data">{data.runtime}</span></div>
-                                <div className="col-xs-6"> Box Office: <span className="meta-data">{data.totalRevenue}</span></div>
-                                <div className="col-xs-6"> Vote Average: <span className="meta-data">{data.vote}</span></div>
-                        </div>    
-                    </div>
-                </div>
-
-                <div className="poster-container nopadding col-xs-12 col-md-4 pull-md-8 col-lg-5 pull-lg-7">  
-                    <img id="postertest" className="poster" src={posterIMG}/>
-                </div>
-            </div>    
-        )
-    }
-    
-    componentDidUpdate() {
-        document.body.style.backgroundImage = `url${backdropIMG}`;
-    }
+componentDidMount() {
+  this.props.showDetail(this.props.params.movieID);
 }
 
-export default MovieDetails
+  render() {
+    if (!this.props.movie) {
+      return <h1>Loading...</h1>
+    }
+
+    const { name, cover, id, img, summary, videos, aggregated_rating } = this.props.movie;
+    const imageUrl = cover ? `https://image.tmdb.org/t/p/w500${movie.cover}` : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png';
+    const video = videos ? videos[0].video_id : 'dQw4w9WgXcQ';
+    const youtubeLink = `https://www.youtube.com/embed/${video}`;
+    const summaryText = summary ? summary : 'N/A';
+    const rating = aggregated_rating ? Math.round(aggregated_rating / 10) + '/10' : 'Not Rated';
+
+    return (
+        <div className="gameDetails">
+          <button className="button" id="homeButton" onClick={() => browserHistory.push('/home')}>Home</button>
+          <h1 className="detailGameTitle">{name}</h1>
+            <Rating /><h5 className="rating"> [{rating}]</h5> <br />
+            <img className="image"
+                src={imageUrl}
+                alt="error, no img found" /><br /><br />
+              <div className="summaryText">
+                <h3 className="summary">
+                <strong style={{float:'left'}}>Synopsis:</strong><br />
+                  {summaryText}
+                </h3>
+              </div>
+            <iframe className="iframe" src={youtubeLink} frameBorder="0" allowFullScreen></iframe>
+        </div>
+    )
+  }
+};
+
+const mapStateToProps = state => ({
+  game: state.game
+})
+
+export default connect(mapStateToProps, { showDetail, searchGame })(GameDetails);
