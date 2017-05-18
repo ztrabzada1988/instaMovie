@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 function Rating(props) {
@@ -28,4 +28,4 @@ const mapStateToProps = state => ({
   movie: state.movie
 })
 
-export default connect(mapStateToProps)(Rating);*/
+export default connect(mapStateToProps)(Rating);
