@@ -9,14 +9,14 @@ class MovieCard extends React.Component {
     super(props);
   }
 
-  // if name exceeds 25 char put ... at the end
-  // truncateText = text => {
-  //  console.log(text);
-  //  if (text.length > 25) {
-  //    return text.substr(0, 25) + "...";
-  //  }
-  //  return text;
-  // }
+  if name exceeds 25 char put ... at the end
+  truncateText = text => {
+   console.log(text);
+   if (text.length > 25) {
+     return text.substr(0, 25) + "...";
+   }
+   return text;
+  }
 
   render() {
     //props here is a single movie object
