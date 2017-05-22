@@ -1,4 +1,4 @@
-import { SEARCH_MOVIE, RECEIVED_MOVIE, SHOW_DETAIL } from '../actions/index.js';
+import { SEARCH_MOVIE, RECEIVED_MOVIE, SHOW_DETAIL } from '../actions';
 
 const initialState = {
   loading: false,
