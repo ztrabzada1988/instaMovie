@@ -5,7 +5,7 @@ import { searchMovie } from '../actions';
 import { browserHistory } from 'react-router';
 
 class SearchBar extends React.Component {
-    
+
     // set initial state to query value empty
     state = {
         query: ''
@@ -26,7 +26,7 @@ class SearchBar extends React.Component {
     // onsearchapi first preventdefault, go to /games page, and run the searchMovie function imported from actions with value entered by user (query.value)
     onSearchAPI = async (event) => {
         event.preventDefault();
-        browserHistory.push('/games')
+        browserHistory.push('/movies')
         this.props.searchMovie(this.state.query)
     }
 
@@ -40,8 +40,8 @@ class SearchBar extends React.Component {
                     <input className="inputBox" type="text" placeholder="Search Movie Titles..." value={this.state.query} onChange={this.onChangeTerm} />
                     <button className="button" type="button" onClick={this.onSearchAPI}>Search</button>
                 </form>
-                <isLoading />    
-            </div>    
+                <isLoading />
+            </div>
         )
     }
 }
