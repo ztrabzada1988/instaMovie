@@ -23,7 +23,13 @@ const receivedMovie = movies => ({
 });
 
 export const SHOW_DETAIL = 'SHOW_DETAIL';
-export const showDetail = movieId => ({
-  type: SHOW_DETAIL,
-  movieId
-})
+export const showDetail = movieId => async dispatch => {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=508b14c0d7be622882e5f6d6221dd78f&language=en-US`
+
+  dispatch ({ type: SHOW_DETAIL })
+  try {
+    const res = await axios.get(`${url}${movieId}`)
+    console.log(res);
+    return dispatch(receivedMovie(res.data))
+  }
+}
