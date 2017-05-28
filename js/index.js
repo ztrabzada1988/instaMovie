@@ -9,6 +9,7 @@ import store from './store';
 import App from './components/App';
 import MovieCardList from './components/MovieCardList';
 import MovieDetails from './components/MovieDetails';
+import LandingPage from './components/LandingPage';
 
 const routes = (
   <Provider store={store}>

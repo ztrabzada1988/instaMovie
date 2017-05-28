@@ -15,15 +15,14 @@ componentDidMount() {
       return <h1>Loading...</h1>
     }
 
-    const { name, cover, id, img, summary, videos, aggregated_rating } = this.props.movie;
-    const imageUrl = cover ? `https://image.tmdb.org/t/p/w500${movie.cover}` : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png';
+    const { name, cover, id, img, summary, videos, esrb, aggregated_rating } = this.props.movie;
+    const imageUrl = cover ? `http://images.igdb.com/igdb/image/upload/w_320/${cover.cloudinary_id}.png` : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png';
     const video = videos ? videos[0].video_id : 'dQw4w9WgXcQ';
     const youtubeLink = `https://www.youtube.com/embed/${video}`;
     const summaryText = summary ? summary : 'N/A';
     const rating = aggregated_rating ? Math.round(aggregated_rating / 10) + '/10' : 'Not Rated';
-
     return (
-        <div className="gameDetails">
+        <div className="movieDetails">
           <button className="button" id="homeButton" onClick={() => browserHistory.push('/home')}>Home</button>
           <h1 className="detailGameTitle">{name}</h1>
             <Rating /><h5 className="rating"> [{rating}]</h5> <br />
@@ -43,7 +42,7 @@ componentDidMount() {
 };
 
 const mapStateToProps = state => ({
-  game: state.game
+  movie: state.movie
 })
 
-export default connect(mapStateToProps, { showDetail, searchGame })(GameDetails);
+export default connect(mapStateToProps, { showDetail, searchMovie })(MovieDetails);

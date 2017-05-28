@@ -2,12 +2,15 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import { browserHistory } from 'react-router';
 
-class App extends React.Component {
+export default class App extends React.Component {
 
   constructor(props) {
     super(props);
   }
 
+_backspace() {
+
+}
   render() {
     const title = 'InstaMovie';
     return (
@@ -23,6 +26,3 @@ class App extends React.Component {
     );
   };
 };
-
-
-export default App

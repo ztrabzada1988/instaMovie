@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router';
-
-
 export default class LandingPage extends Component  {
 
     render() {
@@ -41,7 +39,7 @@ export default class LandingPage extends Component  {
 
         const pStyling = {
             marginTop: '30px',
-            marginBottom: '30px',   
+            marginBottom: '30px',
             zIndex: 1,
             background: '#f9f9f9',
             borderRadius: '5px',
@@ -61,11 +59,11 @@ export default class LandingPage extends Component  {
             zIndex: 1,
             letterSpacing: '1px'
         }
-        
+
         return(
                 <div className="landing" style={styledDiv}>
                     <div style={container}/>
-                    <Link to="/home"><h1 style={landingTitle}>instaMovie</h1></Link>
+                    <Link to="/home"><h1 style={landingTitle}>Gamesift</h1></Link>
                     <p style={pStyling}>
                         A movie synopsis search engine. <br />
                         Find out what movies you've been missing out on.
@@ -74,4 +72,5 @@ export default class LandingPage extends Component  {
                 </div>
             );
     }
+
 };

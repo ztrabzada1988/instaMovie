@@ -3,52 +3,47 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import { searchMovie } from '../actions';
 import { browserHistory } from 'react-router';
-
 class SearchBar extends React.Component {
+  state = {
+    query: ''
+  }
 
-    // set initial state to query value empty
-    state = {
-        query: ''
+  Loading = () => { return <h5>Loading...</h5> }
+  NotLoading = () => { return; }
+  isLoading = () => {
+    const loading = this.props.loading;
+    if (loading) {
+      return <Loading />
+    } else {
+      return <NotLoading />
     }
+  };
 
-    // while data is being fetched from API request run the loading... function
-    Loading = () => { return <h5>Context Loading...</h5> }
-    NotLoading = () => { return; }
-    isLoading = () => {
-        const loading = this.props.loading;
-        if (loading) {
-            return <Loading />
-        } else {
-            return <NotLoading />
-        }
-    }
+  onSearchAPI = async (event) => {
+    event.preventDefault();
+    browserHistory.push('/movies')
+    this.props.searchMovie(this.state.query)
+  }
 
-    // onsearchapi first preventdefault, go to /games page, and run the searchMovie function imported from actions with value entered by user (query.value)
-    onSearchAPI = async (event) => {
-        event.preventDefault();
-        browserHistory.push('/movies')
-        this.props.searchMovie(this.state.query)
-    }
+  _onChangeTerm = e => this.setState({ query: e.target.value })
 
-    // set the value of user input as the query value
-    onChangeTerm = e => this.setState({ query: e.target.value })
-
-    render() {
-        return (
-            <div className="formDiv">
-                <form className="form" onSubmit={this.onSearchAPI}>
-                    <input className="inputBox" type="text" placeholder="Search Movie Titles..." value={this.state.query} onChange={this.onChangeTerm} />
-                    <button className="button" type="button" onClick={this.onSearchAPI}>Search</button>
-                </form>
-                <isLoading />
-            </div>
-        )
-    }
+  render() {
+      return (
+          <div className="formDiv">
+            <form className="form" onSubmit={this.onSearchAPI}>
+              <input className="inputBox" type="text" placeholder="Enter movie title" value={this.state.query} onChange={this._onChangeTerm} />
+              <button className="button" type="button" onClick={this.onSearchAPI}>
+                  Search
+              </button>
+            </form>
+            <isLoading />
+          </div>
+      )
+  }
 }
 
-// link the component to certain parts of the store
 const mapStateToProps = state => ({
-    loading: state.loading
+  loading: state.loading
 });
 
 export default connect(mapStateToProps, { searchMovie })(SearchBar);
