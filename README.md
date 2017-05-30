@@ -1,10 +1,9 @@
-##Gamesift
+##InstaMovie
 [![Build Status](https://travis-ci.org/dotexe0/gamesift.svg?branch=master)](https://travis-ci.org/dotexe0/gamesift)
 <h2>About</h2>
-A video game synopsis search engine. Hear about a cool new game, but want to get a quick synopsis/summary? This app lets you search for video games and find out what it's all about.
+A movie synopsis search engine. Hear about a cool new game, but want to get a quick synopsis/summary? This app lets you search for movies and find out what it's all about.
 
 ## Live:
-http://gamesift.surge.sh
 
 
 ## Tools
@@ -27,10 +26,9 @@ http://gamesift.surge.sh
 * GH-Pages
 
 ## Searching...
-![Landing Page](https://i.imgur.com/uss4arx.jpg)
+![Landing Page]
 
-## Video Game Synopsis
-![Landing Page](https://i.imgur.com/Yy93zdh.png)
+
 
 
 ## Installing @ localhost
