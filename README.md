@@ -1,5 +1,4 @@
 ##InstaMovie
-[![Build Status](https://travis-ci.org/dotexe0/gamesift.svg?branch=master)](https://travis-ci.org/dotexe0/gamesift)
 <h2>About</h2>
 A movie synopsis search engine. Hear about a cool new game, but want to get a quick synopsis/summary? This app lets you search for movies and find out what it's all about.
 
