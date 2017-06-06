@@ -1,6 +1,6 @@
 ##InstaMovie
 <h2>About</h2>
-A movie synopsis search engine. Hear about a cool new game, but want to get a quick synopsis/summary? This app lets you search for movies and find out what it's all about.
+A movie synopsis search engine. Hear about a cool MOVIE, but want to get a quick synopsis/summary? This app lets you search for movies and find out what it's all about.
 
 ## Live:
 
@@ -12,7 +12,7 @@ A movie synopsis search engine. Hear about a cool new game, but want to get a qu
 * Javascript (ES6)
 
 **Back End**
-* IGDB API
+* TMDB API
 * Axios (HTTP requests)
 
 **Testing**
