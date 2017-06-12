@@ -25,7 +25,7 @@ export default (state=initialState, action) => {
 
       return {
         ...state,
-        movie: state.movies.filter(i => i.id.toString() === action.movieId)[0]
+        movie: state.movies.filter(i => i.id.toString() === action.movieId)//[0]
       }
 
     default:
