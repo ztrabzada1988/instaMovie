@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieCardContainer from './MovieCardContainer';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 
 class MovieCardList extends React.Component {
 
