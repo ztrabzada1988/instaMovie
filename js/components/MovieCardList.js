@@ -7,7 +7,7 @@ class MovieCardList extends React.Component {
 
   render() {
 
-    const movies = _movies((movie, index) => {
+    const movies = _.this.props.movies((movie, index) => {
       const imageUrl = movie.poster ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png';
       const video = movie.videos ? movie.videos[0].video_id : 'dQw4w9WgXcQ';
 
