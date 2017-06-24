@@ -7,8 +7,8 @@ class MovieCardList extends React.Component {
 
   render() {
 
-    // .map or lodash not working on movies 
-    const movies = _.this.props.movies((movie, index) => {
+    // .map or lodash not working on movies
+    const movies = this.props.movies.map((movie, index) => {
       const imageUrl = movie.poster ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png';
 
       // vido not working
